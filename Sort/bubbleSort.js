@@ -15,3 +15,8 @@ function bubbleSort(arr) {
 }
 
 console.log(bubbleSort([30, 10, 11, 8, 5, 7, 3, 11]))
+
+/*
+Time: O(n^2) where n is the length of the array
+Space: O(1) constant
+*/
