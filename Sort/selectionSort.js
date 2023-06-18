@@ -6,9 +6,11 @@ function selectionSort(arr) {
                 lowest = j
             }
         }
-        let temp = arr[i];
-        arr[i] = arr[lowest]
-        arr[lowest] = temp
+        if (lowest !== i) {
+            let temp = arr[i];
+            arr[i] = arr[lowest]
+            arr[lowest] = temp
+        }
     }
     return arr;
 }
