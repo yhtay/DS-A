@@ -10,3 +10,4 @@ function insertionSort(arr) {
 }
 
 console.log(insertionSort([2, 1, 8, 6, 3, 9]))
+console.log(insertionSort([2, 1, 8, 6, 3, 9, 3 ,8]))
