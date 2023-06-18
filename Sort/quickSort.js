@@ -38,7 +38,7 @@ Best & Average: O(n log n)
     - O(log n) from the number of times the array is split or decompose grows as array gets longer
     - O(n) from the number of comparisions per decomposition
 Worst: O(n^2)
-    - If the pivot is the smallest or the largest of the array and the array is already sorted it becomes:
+    - If the pivot is the smallest or the largest of the array and the array is already sorted, it becomes O(n ^ 2):
     - O(n) from the number of times the array is split or decompose grows as array gets longer
     - O(n) from the number of comparisions per decomposition
 
