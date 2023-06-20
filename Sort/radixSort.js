@@ -32,3 +32,11 @@ function radixSort(nums) {
 // console.log(digitCount(4300)) //4
 // console.log(mostDigits([303, 101313, 11, 8, 5, 7, 3, 11])) // 6
 console.log(radixSort([30, 10, 11, 808, 5, 7890, 3, 11]))
+
+/*
+Time Complexity: O(nk)
+    - n is the length of the array
+    - k is the number of digits(average)
+
+Space Complexity: O(n +k)
+*/
