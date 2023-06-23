@@ -35,18 +35,32 @@ class SinglyLinkedList {
             newTail = current;
             current = current.next;
         }
-        console.log("current: ", current.val)
-        console.log("newTail: ", newTail.val)
+        // console.log("current: ", current.val)
+        // console.log("newTail: ", newTail.val)
         this.tail = newTail;
         this.tail.next = null;
         this.length--;
 
+        // If there's one item left
         if (this.length === 0) {
             this.head = null
             this.tail = null
         }
         return current
     }
+
+    shift () {
+        if (!this.head) return undefined;
+        let currentHead = this.head;
+        this.head = currentHead.next;
+        this.length--;
+        if (this.length === 0) {
+            this.tail = null
+        }
+        return currentHead;
+    }
+
+
 }
 
 let list = new SinglyLinkedList()
@@ -55,5 +69,10 @@ list.push("GoodBye")
 list.push("See")
 list.push("You")
 
-console.log(list.pop())
-console.log(list.pop())
+// console.log(list.pop())
+// console.log(list.shift())
+// console.log(list.shift())
+// console.log(list.shift())
+
+list.unshift("hi")
+console.log(list)
