@@ -71,7 +71,8 @@ class SinglyLinkedList {
         this.length++;
         return this
     }
-    /* Get: Retrieve a node by it's position in the Linked List!
+    /*
+        Get: Retrieve a node by it's position in the Linked List!
         not efficient with linked list, array is preferred
     */
     get (index) {
@@ -84,9 +85,16 @@ class SinglyLinkedList {
         }
         return current
     }
-
-    set (val, pos) {
-        
+    /*
+        Set: Change the value of a node based on it's position in the Linked List
+    */
+    set (index, val) {
+        let targetNode = this.get(index)
+        if (targetNode) {
+            targetNode.val = val
+            return true;
+        }
+        return false;
     }
 
 }
@@ -101,4 +109,5 @@ list.push("Later")
 // console.log(list.pop())
 // console.log(list.shift())
 // list.unshift("Hi")
+list.set(4 , "Her")
 console.log(list)
