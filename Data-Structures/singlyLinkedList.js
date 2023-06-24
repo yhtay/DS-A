@@ -85,5 +85,5 @@ list.push("You")
 // console.log(list.shift())
 // console.log(list.shift())
 
-list.unshift("hi")
+list.unshift("Hi")
 console.log(list)
