@@ -97,6 +97,60 @@ class SinglyLinkedList {
         return false;
     }
 
+    insert (index, val) {
+        if (index < 0 || index > this.length) return false;
+        if (index === this.length) !!this.push(val);
+        if (index === 0) !!this.unshift(val)
+
+        let newNode = new Node(val)
+        let prevNode = this.get(index - 1)
+        let temp = prevNode.next
+        prevNode.next = newNode
+        newNode.next = temp;
+        this.length++;
+        return true;
+    }
+
+    remove(index) {
+        if (index < 0 || index >= this.length) return undefined;
+        if (index === this.length - 1) return this.pop();
+        if (index === 0) return this.shift();
+
+        let prevNode = this.get(index - 1)
+        let nodeToRemove = prevNode.next
+        prevNode.next = nodeToRemove.next;
+
+        return nodeToRemove
+    }
+    /*
+        Reverse the linked-list in place without making a copy
+    */
+
+
+    reverse () {
+        let currNode = this.head;
+        this.head = this.tail;
+        this.tail = node;
+        let prev = null;
+        let next;
+        for (let i = 0; i < this.length; i++) {
+            next = currNode.next;
+            currNode.next = prev;
+            prev = currNode;
+            currNode = next;
+
+        }
+    }
+    print () {
+        let arr = [];
+        let current = this.head
+        while (current) {
+            arr.push(current.val)
+            current = current.next
+        }
+        console.log(arr)
+    }
+
 }
 
 let list = new SinglyLinkedList()
