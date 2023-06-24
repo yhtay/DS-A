@@ -71,6 +71,23 @@ class SinglyLinkedList {
         this.length++;
         return this
     }
+    /* Get: Retrieve a node by it's position in the Linked List!
+        not efficient with linked list, array is preferred
+    */
+    get (index) {
+        if (index < 0 || index >= this.length) return null;
+        let count = 0;
+        let current = this.head;
+        while (count !== index) {
+            current = current.next
+            count++
+        }
+        return current
+    }
+
+    set (val, pos) {
+        
+    }
 
 }
 
@@ -79,11 +96,9 @@ list.push("Hello")
 list.push("GoodBye")
 list.push("See")
 list.push("You")
+list.push("Later")
 
 // console.log(list.pop())
 // console.log(list.shift())
-// console.log(list.shift())
-// console.log(list.shift())
-
-list.unshift("Hi")
+// list.unshift("Hi")
 console.log(list)
