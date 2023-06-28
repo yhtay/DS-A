@@ -92,6 +92,16 @@ class DoublyLinkedList {
         }
         return current
     }
+
+    set(index, val) {
+        let targetNode = this.get(index)
+        if (targetNode) {
+            targetNode.val = val
+            return true
+        }
+        return false
+    }
+
 }
 
 let list = new DoublyLinkedList()
@@ -102,6 +112,5 @@ list.push("44")
 list.push("55")
 list.push("66")
 
-console.log(list.get(0))
-console.log(list.get(2))
-// console.log(list)
+console.log(list.set(1, "Hermoine"))
+console.log(list)
