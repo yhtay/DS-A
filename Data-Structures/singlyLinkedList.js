@@ -130,7 +130,7 @@ class SinglyLinkedList {
     reverse () {
         let currNode = this.head;
         this.head = this.tail;
-        this.tail = node;
+        this.tail = currNode;
         let prev = null;
         let next;
         for (let i = 0; i < this.length; i++) {
@@ -138,7 +138,6 @@ class SinglyLinkedList {
             currNode.next = prev;
             prev = currNode;
             currNode = next;
-
         }
     }
     print () {
