@@ -102,6 +102,42 @@ class DoublyLinkedList {
         return false
     }
 
+    insert(index, val) {
+        if (index < 0 || index >= this.length) return false
+        if (index === 0) !!this.unshift(val);
+        if (index === this.length) !!this.push(val);
+
+        let newNode = new Node(val)
+        let prevNode = this.get(index - 1)
+        let temp = prevNode.next
+
+        prevNode.next = newNode
+        newNode.prev = prevNode
+        newNode.next = temp
+        temp.prev = newNode
+        this.length++
+        return true;
+    }
+
+    remove(index) {
+        if (index < 0 || index >= this.length) return undefined;
+        if (index === 0) return this.shift();
+        if (index === this.length - 1) return this.pop();
+
+        let targetNode = this.get(index);
+        let beforeNode = targetNode.prev;
+        let afterNode = targetNode.next;
+
+        beforeNode.next = afterNode;
+        afterNode.prev = beforeNode;
+
+        targetNode.next = null
+        targetNode.prev = null
+        this.length--
+        return targetNode
+
+    }
+
 }
 
 let list = new DoublyLinkedList()
@@ -112,5 +148,6 @@ list.push("44")
 list.push("55")
 list.push("66")
 
-console.log(list.set(1, "Hermoine"))
+console.log(list)
+console.log(list.remove(10))
 console.log(list)
