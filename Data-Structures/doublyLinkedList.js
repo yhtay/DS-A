@@ -56,6 +56,24 @@ class DoublyLinkedList {
         this.length--
         return oldHead
     }
+
+    unshift(val) {
+        let newNode = new Node(val)
+        if (this.length === 0) {
+            this.head = newNode
+            this.tail = newNode
+        } else {
+            this.head.prev = newNode;
+            newNode.next = this.head;
+            this.head = newNode
+        }
+        this.length++
+        return this
+    }
+
+    get(index) {
+        
+    }
 }
 
 let list = new DoublyLinkedList()
@@ -64,6 +82,8 @@ list.push("22")
 list.push("33")
 list.push("44")
 list.push("55")
+list.push("66")
 
-console.log(list.shift())
-console.log(list.shift())
+console.log(list.unshift("2"))
+console.log(list.unshift("3"))
+console.log(list)
