@@ -146,7 +146,7 @@ class DoublyLinkedList {
             let temp = current.prev;
             current.prev = current.next;
             current.next = temp;
-            current = current.next;
+            current = current.prev;
         }
 
     }
