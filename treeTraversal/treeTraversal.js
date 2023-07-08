@@ -55,15 +55,34 @@ class BinarySearchTree {
         }
         return false;
     }
-}
+    breadthFirstSearch() {
+        let data = [];
+        let queue = [];
+        let node = this.root;
+        queue.push(node);
 
-/*
-Avg and Best Case:
-    Insertion = O(log n)
-    Searching = O(log n)
-Worst case:
-    O(n) - completely one sided BST
-*/
+        while (queue.length) {
+            node = queue.shift();
+            data.push(node.value); //pushing value for data visulaization
+            if (node.left) queue.push(node.left);
+            if (node.right) queue.push(node.right);
+        }
+        return data;
+    }
+
+    DFSPreOrder() { // Left side first then right side
+        let data = [];
+        let current = this.root;
+        function traverse(node) {
+            data.push(node.value);
+            if(node.left) traverse(node.left);
+            if(node.right) traverse(node.right);
+        }
+        traverse(current);
+        return data;
+
+    }
+}
 
 let tree = new BinarySearchTree();
 tree.insert(10);
@@ -73,4 +92,5 @@ tree.insert(3);
 tree.insert(8);
 tree.insert(20);
 
-console.log(tree)
+console.log("BFS: ", tree.breadthFirstSearch())
+console.log("DFS-PreOrder: ", tree.DFSPreOrder())
