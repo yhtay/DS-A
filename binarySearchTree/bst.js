@@ -57,6 +57,14 @@ class BinarySearchTree {
     }
 }
 
+/*
+Avg and Best Case:
+    Insertion = O(log n)
+    Searching = O(log n)
+Worst case:
+    O(n) - completely one sided BST
+*/
+
 let tree = new BinarySearchTree();
 tree.insert(10)
 tree.insert(11)
