@@ -117,3 +117,16 @@ console.log("BFS: ", tree.breadthFirstSearch())
 console.log("DFS-PreOrder: ", tree.DFSPreOrder())
 console.log("DFS-PostOrder: ", tree.DFSPostOrder())
 console.log("DFS-InOrder: ", tree.DFSInOrder())
+
+/*
+Time complexity for all of the tree Traversal: O(N + E) where N is number of nodes and E is number of edges.
+Space complexity:
+
+BFS: Preferred for deep long tree, where you aren't storing as many nodes in the queue.
+    If the tree is wide, using BFS will store too many nodes in the queue, takes more space.
+
+Applications:
+    DFS-Pre: Used to export the tree structure so it is easily reconstructed or copied. - you know the root of the tree, which is the first item.
+    DFS-Post: Used for deleting nodes from a tree
+    DFS-InOrder: Used if you want data to return "in order"
+*/

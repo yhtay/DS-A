@@ -4,13 +4,16 @@ function insertionSort(arr) {
         for (let j = i - 1; j >= 0 && arr[j] > currentVal; j--) {
             arr[j + 1] = arr[j];
             arr[j] = currentVal
+            // console.log("arr in loop: ", arr)
         }
     }
     return arr
 }
 
-console.log(insertionSort([2, 1, 8, 6, 3, 9]))
-console.log(insertionSort([2, 1, 8, 6, 3, 9, 3 ,8, 6]))
+insertionSort([2, 1, 8, 6, 3, 9])
+
+// console.log(insertionSort([2, 1, 8, 6, 3, 9]))
+// console.log(insertionSort([2, 1, 8, 6, 3, 9, 3 ,8, 6]))
 
 /*
 Time: O(n^2) where n is the length of the array
