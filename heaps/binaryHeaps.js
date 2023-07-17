@@ -77,3 +77,10 @@ heap.insert(60)
 console.log(heap)
 // [41, 39, 33, 18, 27, 12, 55]
 //  0   1   2   3   4   5   6
+
+/*
+Time Complexity:
+    Insertion: O(log N)
+    Removal: O(log N)
+    Search: O(N)
+*/
