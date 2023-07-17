@@ -35,7 +35,7 @@ class HashTable {
     }
 }
 
-let ht = new HashTable();
+
 let ht = new HashTable(17);
 ht.set("maroon","#800000")
 ht.set("yellow","#FFFF00")
