@@ -1,6 +1,6 @@
 class HashTable {
     constructor (size = 53) {
-        this.keyMap = newArray(size);
+        this.keyMap = new Array(size);
     }
 
     _hash(key) {
@@ -33,6 +33,39 @@ class HashTable {
         }
         return undefined
     }
+
+    values() {
+        let valuesArr = [];
+        for (let i = 0; i < this.keyMap.length; i++) {
+            if (this.keyMap[i]) {
+                // console.log(this.keyMap[i])
+                for (let j = 0; j < this.keyMap[i].length; j++) {
+                    // Check to make sure there are no duplicates
+                    if(!valuesArr.includes(this.keyMap[i][j][1])) {
+                        valuesArr.push(this.keyMap[i][j][1])
+                    }
+                }
+            }
+        }
+        // console.log("valuesArr: ", valuesArr)
+        return valuesArr;
+    }
+
+    keys() {
+        let keysArr = []
+        for (let i = 0; i < this.keyMap.length; i++) {
+            if (this.keyMap[i]) {
+                for (let j = 0; j < this.keyMap[i].length; j++) {
+                    if (!keysArr.includes(this.keyMap[i][j][0])) {
+                        keysArr.push(this.keyMap[i][j][0])
+                    }
+                }
+            }
+        }
+        console.log("keysArr:", keysArr)
+        return keysArr
+    }
+
 }
 
 
@@ -44,3 +77,6 @@ ht.set("salmon","#FA8072")
 ht.set("lightcoral","#F08080")
 ht.set("mediumvioletred","#C71585")
 ht.set("plum","#DDA0DD")
+
+// ht.values()
+ht.keys()
