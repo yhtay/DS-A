@@ -33,7 +33,6 @@ function mergeSort(arr) {
     let right = mergeSort(arr.slice(mid));
 
     return merge(left, right)
-
 }
 
 console.log(mergeSort([1, 10, 9, 7, 50, 99, 2, 14, 99, 100, 3]))
@@ -42,6 +41,6 @@ console.log(mergeSort([1, 10, 9, 7, 50, 99, 2, 14, 99, 100, 3]))
 Time Complexity: O(n log n) where n is the length of the array
     - O(log n) from the number of times the array is split or decompose grows as array gets longer
     - O(n) from the number of comparisions per decomposition
-    
+
 Space complexity: O(n) where n is the length of the array
 */
