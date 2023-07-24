@@ -44,16 +44,49 @@ class Graph {
         delete this.adjacencyList[vertex]
     }
 
-    depthFirstSearch(vertex) {
-        
+    depthFirstRecursive(start) {
+        const result = [];
+        const visited = {};
+        const adjacencyList = this.adjacencyList
+
+        let dfs = (vertex) => {
+            if (!vertex) return null;
+            result.push(vertex)
+            visited[vertex] = true;
+            adjacencyList[vertex].forEach(neighbor => {
+                if (!visited[neighbor]) {
+                    return dfs(neighbor)
+                }
+            });
+        }
+        dfs(start)
+        return result;
     }
 }
 
 let g = new Graph();
 
-g.addEdge("Dallas", "Tokyo");
-g.addEdge("Dallas", "Aspen");
-g.addEdge("Hong Kong", "Tokyo");
-g.addEdge("Hong Kong", "Dallas");
-g.addEdge("Los Angeles", "Hong Kong");
-g.addEdge("Los Angeles", "Aspen");
+g.addVertex("A")
+g.addVertex("B")
+g.addVertex("C")
+g.addVertex("D")
+g.addVertex("E")
+g.addVertex("F")
+
+
+g.addEdge("A", "B")
+g.addEdge("A", "C")
+g.addEdge("B","D")
+g.addEdge("C","E")
+g.addEdge("D","E")
+g.addEdge("D","F")
+g.addEdge("E","F")
+console.log(g.depthFirstRecursive("A"))
+
+//          A
+//        /   \
+//       B     C
+//       |     |
+//       D --- E
+//        \   /
+//          F
