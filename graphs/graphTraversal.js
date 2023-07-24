@@ -72,7 +72,7 @@ class Graph {
         visited[start] = true;
 
         while (stack.length > 0) {
-            console.log("stack: ", stack)
+            // console.log("stack: ", stack)
             currVertex = stack.pop()
             result.push(currVertex)
 
@@ -85,6 +85,29 @@ class Graph {
             })
         }
         return result
+    }
+
+    breadthFirst(start) {
+        const queue = [start];
+        const result = [];
+        const visited = {};
+        let currVertex;
+
+        visited[start] = true;
+
+        while (queue.length > 0) {
+            currVertex = queue.shift();
+            result.push(currVertex);
+
+            this.adjacencyList[currVertex].forEach(neighbor => {
+
+                if (!visited[neighbor]) {
+                    visited[neighbor] = true;
+                    queue.push(neighbor)
+                }
+            })
+        };
+        return result;
     }
 }
 
@@ -105,8 +128,9 @@ g.addEdge("C","E")
 g.addEdge("D","E")
 g.addEdge("D","F")
 g.addEdge("E","F")
-// console.log(g.depthFirstRecursive("A"))
-console.log(g.depthFirstIterative("A"))
+console.log("DF Recurisve: ", g.depthFirstRecursive("A"))
+console.log("DF Iterative: ",g.depthFirstIterative("A"))
+console.log("BF Iterative: ",g.breadthFirst("A"))
 
 //          A
 //        /   \
