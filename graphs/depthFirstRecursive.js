@@ -49,7 +49,7 @@ class Graph {
         const visited = {};
         const adjacencyList = this.adjacencyList
 
-        let dfs = (vertex) => {
+        const dfs = (vertex) => {
             if (!vertex) return null;
             result.push(vertex)
             visited[vertex] = true;
