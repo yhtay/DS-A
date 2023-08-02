@@ -8,3 +8,8 @@ function fib(n) {
 }
 
 console.log(fib(9999))
+
+/*
+Time: O(N) N is the size of N
+Space: O(1) constant
+*/
